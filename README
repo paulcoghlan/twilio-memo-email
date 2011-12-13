@@ -1,0 +1,21 @@
+Twilio Email Memo App
+=====================
+This project uses the Twilio Developer API to implement a speech-to-text memo service.
+
+Simply call your Twilio phone number and leave a message after the beep.  Twilio will transcribe your 
+message and email the text to an address you've specified - this could be your own personal email, or
+your personal Evernote email address.  Use the latter to allow you to take notes from wherever you are,
+and has the advantage of working with your phone's hands-free kit.  
+
+This app is intended to be hosted on the Google Engine API.  
+
+To run this app:
+1) Create your Twilio (http://www.twilio.com/docs) and Google Engine developer accounts
+2) Pick a unique Google Engine app name, and update the WEB-INF/appengine-web.xml
+3) Setup a Twilio app with a voice request URL of the form:
+https://<your-app-name>.appspot.com/index.xml
+4) Set your target email address in SendEmailServlet.java
+5) Upload to Google Engine using:
+appcfg.sh update <war directory>
+6) Call your Twilio number and leave a message after the beep.  The email should be generated soon afterwards
+
